@@ -28,7 +28,9 @@ public class SeleniumTest {
     @Test
     public void testOpenPage() {
         Login openPage = new Login(this.driver);
-        Assert.assertTrue(openPage.waitAndReturnElement(open).getText().contains("Deliver to"));
+        String bodyText = openPage.getBodyText();
+        Assert.assertTrue(bodyText.contains("Amazon Drive"));
+        //Assert.assertTrue(openPage.waitAndReturnElement(open).getText().contains("Deliver to"));
     }
 
     @Test

@@ -6,11 +6,11 @@ Login.java
  Login
 DropDown.java
  DropDown
-Title.java
- Title
+SeleniumTest.java
+ SeleniumTest
 Base.java
  Base
 Logout.java
  Logout
-SeleniumTest.java
- SeleniumTest
+Title.java
+ Title
