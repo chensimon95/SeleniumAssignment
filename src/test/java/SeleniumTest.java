@@ -1,4 +1,5 @@
 import org.junit.*;
+import org.openqa.selenium.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -30,7 +31,6 @@ public class SeleniumTest {
         Login openPage = new Login(this.driver);
         String bodyText = openPage.getBodyText();
         Assert.assertTrue(bodyText.contains("Amazon Drive"));
-        //Assert.assertTrue(openPage.waitAndReturnElement(open).getText().contains("Deliver to"));
     }
 
     @Test
@@ -48,7 +48,6 @@ public class SeleniumTest {
         String bodyText = result.getBodyText();
         Assert.assertTrue(bodyText.contains("Amazon Drive"));
         Logout logout = new Logout(result.getDriver());
-        //Assert.assertTrue(logout.waitAndReturnElement(open).getText().contains("Deliver to"));
         ResultPage result2 = logout.doLogout();
         result2.waitAndReturnElement(By.className("a-link-nav-icon")).click();
         String bodyText2 = result2.getBodyText();
@@ -92,11 +91,35 @@ public class SeleniumTest {
         ResultPage result = searchTest.search("Laptops");
         String bodyText = result.getBodyText();
         Assert.assertTrue(bodyText.contains("results for"));
-        //result.driver.back();
         result.driver.navigate().back();
         Title title = new Title(result.driver);
         String titleText = title.titleText();
         Assert.assertTrue(titleText.contains("Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more"));
+    }
+
+    @Test
+    public void testCookie(){
+        CookieUse cookietest = new CookieUse(this.driver);
+        Set<Cookie> cookies = cookietest.getCookies();
+        ResultPage result = cookietest.useCookies(cookies);
+        String bodyText = result.getBodyText();
+
+        //If use cookies login success, there will have my username
+        Assert.assertTrue(bodyText.contains("Chen"));
+    }
+
+    @Test
+    public void testMultiplePage(){
+        List<String> subUrls = new ArrayList<>();
+        MultiplePage mul = new MultiplePage(this.driver);
+        Search searchTest = new Search(this.driver);
+        ResultPage result = searchTest.search("Laptops");
+        subUrls.add(mul.getSubUrl(result.driver));
+        result = searchTest.search("Milk");
+        subUrls.add(mul.getSubUrl(result.driver));
+        result = searchTest.search("shampoo");
+        subUrls.add(mul.getSubUrl(result.driver));
+        mul.openPages(subUrls);
     }
     
     @After

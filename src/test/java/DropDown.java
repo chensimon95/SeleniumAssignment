@@ -30,8 +30,6 @@ class DropDown extends Base{
         for (WebElement webElement : webElements){
             texts.add(webElement.getText());
         }
-        //WebElement option = select.getFirstSelectedOption();
-        //String text = option.getText();
         return texts;
     }
 

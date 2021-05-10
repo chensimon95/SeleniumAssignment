@@ -13,7 +13,6 @@ import org.openqa.selenium.NoSuchElementException;
 
 
 class Search extends Base {
-    //private By searchBar = By.name("field-keywords");
     private By searchBar = By.xpath("//div[@class='nav-search-field ']/input");
     private By searchButton = By.id("nav-search-submit-text");
 

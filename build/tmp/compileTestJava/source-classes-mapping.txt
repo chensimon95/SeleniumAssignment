@@ -1,16 +1,20 @@
+CookieUse.java
+ CookieUse
 ResultPage.java
  ResultPage
 Search.java
  Search
+Title.java
+ Title
 Login.java
  Login
 DropDown.java
  DropDown
-SeleniumTest.java
- SeleniumTest
-Base.java
- Base
 Logout.java
  Logout
-Title.java
- Title
+Base.java
+ Base
+MultiplePage.java
+ MultiplePage
+SeleniumTest.java
+ SeleniumTest
