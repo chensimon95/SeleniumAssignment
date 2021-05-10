@@ -123,7 +123,7 @@ public class SeleniumTest {
     }
 
     @Test
-    public void testDragDrop(){
+    public void testUploadFile(){
         UploadFile up = new UploadFile(this.driver);
         ResultPage result = up.UploadImage();
     }
