@@ -26,7 +26,7 @@ public class SeleniumTest {
         driver.manage().window().maximize();
     }
     
-    /*@Test
+    @Test
     public void testOpenPage() {
         Login openPage = new Login(this.driver);
         String bodyText = openPage.getBodyText();
@@ -120,7 +120,7 @@ public class SeleniumTest {
         result = searchTest.search("shampoo");
         subUrls.add(mul.getSubUrl(result.driver));
         mul.openPages(subUrls);
-    }*/
+    }
 
     @Test
     public void testDragDrop(){
