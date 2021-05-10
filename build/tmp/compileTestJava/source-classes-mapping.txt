@@ -4,17 +4,19 @@ ResultPage.java
  ResultPage
 Search.java
  Search
-Title.java
- Title
+MultiplePage.java
+ MultiplePage
 Login.java
  Login
 DropDown.java
  DropDown
-Logout.java
- Logout
+Title.java
+ Title
 Base.java
  Base
-MultiplePage.java
- MultiplePage
+Logout.java
+ Logout
 SeleniumTest.java
  SeleniumTest
+UploadFile.java
+ UploadFile
